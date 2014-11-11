@@ -89,7 +89,7 @@ lo = function(rown, coln, nrow, ncol, cellheight = NA, cellwidth = NA, treeheigh
     return(mindim)
 }
 
-draw_dendrogram = function(hc, horizontal = T){
+draw_dendrogram = function(hc, horizontal = T, tree_color="black"){
     h = hc$height / max(hc$height) / 1.05
     m = hc$merge
     o = hc$order
@@ -135,7 +135,7 @@ draw_dendrogram = function(hc, horizontal = T){
         y[k : (k + 3)] = c$y
     }
     
-    grid.polyline(x = x, y = y, id = id)
+    grid.polyline(x = x, y = y, id = id, col=tree_color)
     
     upViewport()
 }
@@ -292,14 +292,14 @@ heatmap_motor = function(matrix, border_color, cellwidth, cellheight, tree_col, 
     # Draw tree for the columns
     if(!is.na(tree_col[[1]][1]) & treeheight_col != 0){
         pushViewport(vplayout(2, 2))
-        draw_dendrogram(tree_col, horizontal = T)
+        draw_dendrogram(tree_col, horizontal = T, tree_color=font_color)
         upViewport()
     }
     
     # Draw tree for the rows
     if(!is.na(tree_row[[1]][1]) & treeheight_row != 0){
         pushViewport(vplayout(4, 1))
-        draw_dendrogram(tree_row, horizontal = F)
+        draw_dendrogram(tree_row, horizontal = F, tree_color=font_color)
         upViewport()
     }
     
