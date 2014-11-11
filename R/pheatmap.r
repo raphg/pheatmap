@@ -305,7 +305,7 @@ heatmap_motor = function(matrix, border_color, cellwidth, cellheight, tree_col, 
     
     # Draw matrix
     pushViewport(vplayout(4, 2))
-    draw_matrix(matrix, border_color, fmat, fontsize_number)
+    draw_matrix(matrix, border_color, fmat, fontsize_number, font_color=font_color)
     upViewport()
     
     # Draw colnames
