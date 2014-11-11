@@ -206,7 +206,7 @@ draw_annotations = function(converted_annotations, border_color){
     }
 }
 
-draw_annotation_legend = function(annotation, annotation_colors, border_color, font_color, ...){
+draw_annotation_legend = function(annotation, annotation_colors, border_color, font_color="black", ...){
     y = unit(1, "npc")
     text_height = unit(1, "grobheight", textGrob("FGH", gp = gpar(...)))
     for(i in names(annotation_colors)){
@@ -240,7 +240,7 @@ vplayout = function(x, y){
     return(viewport(layout.pos.row = x, layout.pos.col = y))
 }
 
-heatmap_motor = function(matrix, border_color, cellwidth, cellheight, tree_col, tree_row, treeheight_col, treeheight_row, filename, width, height, breaks, color, legend, annotation, annotation_colors, annotation_legend, main, fontsize, fontsize_row, fontsize_col, fmat, fontsize_number, font_color="black", ...){
+heatmap_motor = function(matrix, border_color, cellwidth, cellheight, tree_col, tree_row, treeheight_col, treeheight_row, filename, width, height, breaks, color, legend, annotation, annotation_colors, annotation_legend, main, fontsize, fontsize_row, fontsize_col, fmat, fontsize_number, font_color, ...){
     grid.newpage()
     
     # Set layout
