@@ -327,7 +327,7 @@ heatmap_motor = function(matrix, border_color, cellwidth, cellheight, tree_col, 
     # Draw annotation tracks
     if(!is.na(annotation[[1]][1])){
         pushViewport(vplayout(3, 2))
-        converted_annotation = convert_annotations(annotation, annotation_colors, font_color=font_color)
+        converted_annotation = convert_annotations(annotation, annotation_colors)
         draw_annotations(converted_annotation, border_color)
         upViewport()
     }
