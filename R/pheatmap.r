@@ -135,7 +135,7 @@ draw_dendrogram = function(hc, horizontal = T, tree_color="black"){
         y[k : (k + 3)] = c$y
     }
     
-    grid.polyline(x = x, y = y, id = id, col=tree_color)
+    grid.polyline(x = x, y = y, id = id)
     
     upViewport()
 }
